@@ -92,7 +92,7 @@ const errorHandler = (error, request, response, next) => {
     return response.status(400).json({ error: error.message })
   } else if (error.message.includes('unique')) {
     return response.status(400).json({ error: error.message })
-  } else if (error.message.includes('shorter')) {
+  } else if (error.message.includes('shorter') || error.message.includes('longer')) {
     return response.status(400).json({ error: error.message })
   } else if (error.message.includes('less') || error.message.includes('more than')) {
     return response.status(400).json({ error: error.message })
